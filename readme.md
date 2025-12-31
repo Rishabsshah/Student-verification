@@ -1,3 +1,9 @@
+---
+title: Student Verification Backend
+sdk: docker
+app_port: 7860
+---
+
 # YOLO + NLP-Based ID Card Processing System
 
 This project is a Flask-based application that processes ID cards to extract fields like Name, University, and Expiration Date using two approaches: YOLO + OCR and NLP + OCR. The system compares both methods and provides the best result by matching extracted fields with user input.
