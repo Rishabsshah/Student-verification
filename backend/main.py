@@ -169,3 +169,11 @@ if __name__ == "__main__":
     # Render provides a PORT environment variable. If not found, it defaults to 5000.
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
+
+import gc
+from flask import after_this_request
+
+@app.after_request
+def invoke_gc(response):
+    gc.collect()  # Forces Python to free unused memory immediately
+    return response
